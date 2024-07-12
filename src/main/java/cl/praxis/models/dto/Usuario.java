@@ -10,6 +10,7 @@ public class Usuario {
     private int peso;
     private Timestamp createdAt;
     private Timestamp updatedAt;
+    private Rol rol;
 
     // Constructores, getters y setters aquí
 
@@ -27,8 +28,23 @@ public class Usuario {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
+    
+    
 
-    // Getters y setters
+    public Usuario(int id, String nick, String nombre, String password, int peso, Timestamp createdAt,
+			Timestamp updatedAt, Rol rol) {
+		super();
+		this.id = id;
+		this.nick = nick;
+		this.nombre = nombre;
+		this.password = password;
+		this.peso = peso;
+		this.createdAt = createdAt;
+		this.updatedAt = updatedAt;
+		this.rol = rol;
+	}
+
+	// Getters y setters
     public int getId() {
         return id;
     }
@@ -83,5 +99,13 @@ public class Usuario {
 
     public void setUpdatedAt(Timestamp updatedAt) {
         this.updatedAt = updatedAt;
+    }
+    
+    public Rol getRol() {
+        return rol;
+    }
+
+    public void setRol(Rol rol) {
+        this.rol = rol;
     }
 }

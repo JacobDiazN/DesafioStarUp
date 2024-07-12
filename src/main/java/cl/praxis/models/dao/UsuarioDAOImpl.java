@@ -1,15 +1,13 @@
 package cl.praxis.models.dao;
-
-import cl.praxis.models.dao.UsuarioDAO;
-import cl.praxis.models.dto.Usuario;
-import cl.praxis.models.db.DataBase;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import cl.praxis.models.db.DataBase;
+import cl.praxis.models.dto.Usuario;
 
 public class UsuarioDAOImpl implements UsuarioDAO {
     private static final String CREATE_SQL = "INSERT INTO usuarios (nick, nombre, password, peso) VALUES (?, ?, ?, ?)";
@@ -40,10 +38,10 @@ public class UsuarioDAOImpl implements UsuarioDAO {
             statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                return new Usuario(resultSet.getInt("id"), resultSet.getString("nick"),
-                        resultSet.getString("nombre"), resultSet.getString("password"),
-                        resultSet.getInt("peso"), resultSet.getTimestamp("created_at"),
-                        resultSet.getTimestamp("updated_at"));
+                return new Usuario(resultSet.getInt("id"), resultSet.getString("nick"), 
+                    resultSet.getString("nombre"), resultSet.getString("password"), 
+                    resultSet.getInt("peso"), resultSet.getTimestamp("created_at"), 
+                    resultSet.getTimestamp("updated_at"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -81,13 +79,13 @@ public class UsuarioDAOImpl implements UsuarioDAO {
     public List<Usuario> getAll() {
         List<Usuario> usuarios = new ArrayList<>();
         try (Connection connection = DataBase.getConnect();
-             PreparedStatement statement = connection.prepareStatement(GET_ALL_SQL)) {
-            ResultSet resultSet = statement.executeQuery();
+             PreparedStatement statement = connection.prepareStatement(GET_ALL_SQL);
+             ResultSet resultSet = statement.executeQuery()) {
             while (resultSet.next()) {
-                Usuario usuario = new Usuario(resultSet.getInt("id"), resultSet.getString("nick"),
-                        resultSet.getString("nombre"), resultSet.getString("password"),
-                        resultSet.getInt("peso"), resultSet.getTimestamp("created_at"),
-                        resultSet.getTimestamp("updated_at"));
+                Usuario usuario = new Usuario(resultSet.getInt("id"), resultSet.getString("nick"), 
+                    resultSet.getString("nombre"), resultSet.getString("password"), 
+                    resultSet.getInt("peso"), resultSet.getTimestamp("created_at"), 
+                    resultSet.getTimestamp("updated_at"));
                 usuarios.add(usuario);
             }
         } catch (SQLException e) {
@@ -103,10 +101,10 @@ public class UsuarioDAOImpl implements UsuarioDAO {
             statement.setString(1, nick);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                return new Usuario(resultSet.getInt("id"), resultSet.getString("nick"),
-                        resultSet.getString("nombre"), resultSet.getString("password"),
-                        resultSet.getInt("peso"), resultSet.getTimestamp("created_at"),
-                        resultSet.getTimestamp("updated_at"));
+                return new Usuario(resultSet.getInt("id"), resultSet.getString("nick"), 
+                    resultSet.getString("nombre"), resultSet.getString("password"), 
+                    resultSet.getInt("peso"), resultSet.getTimestamp("created_at"), 
+                    resultSet.getTimestamp("updated_at"));
             }
         } catch (SQLException e) {
             e.printStackTrace();

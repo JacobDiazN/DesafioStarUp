@@ -34,7 +34,7 @@
 					<ul class="navbar-nav">
 						<li class="nav-item"><a class="nav-link active"
 							aria-current="page"
-							href="${pageContext.request.contextPath}/views/index.jsp">Home</a></li>
+							href="${pageContext.request.contextPath}/index.jsp">Home</a></li>
 						<li class="nav-item"><a class="nav-link"
 							href="${pageContext.request.contextPath}/views/registro.jsp">Registro</a></li>
 						<li class="nav-item"><a class="nav-link"

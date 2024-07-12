@@ -1,6 +1,7 @@
 package cl.praxis.models.dao;
 
 import cl.praxis.models.dto.Usuario;
+
 import java.util.List;
 
 public interface UsuarioDAO {

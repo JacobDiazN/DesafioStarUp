@@ -26,7 +26,7 @@
 			data-bs-theme="dark">
 			<div class="container-fluid">
 				<a class="navbar-brand"
-					href="${pageContext.request.contextPath}/views/index.jsp">Bienvenidos</a>
+					href="${pageContext.request.contextPath}/index.jsp">Bienvenidos</a>
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
 					aria-controls="navbarNavDropdown" aria-expanded="false"
@@ -37,7 +37,7 @@
 					<ul class="navbar-nav">
 						<li class="nav-item"><a class="nav-link active"
 							aria-current="page"
-							href="${pageContext.request.contextPath}/views/index.jsp">Home</a></li>
+							href="${pageContext.request.contextPath}/index.jsp">Home</a></li>
 						<li class="nav-item"><a class="nav-link"
 							href="${pageContext.request.contextPath}/views/registro.jsp">Registro</a></li>
 						<li class="nav-item"><a class="nav-link"
